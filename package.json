@@ -15,6 +15,6 @@
     "json-server": "^0.17.4",
     "json-server-auth": "^2.1.0"
   },
-  "proxy": "https://gipermarketapi.vercel.app",
+  "proxy": "https://gipermarketapi.vercel.app"
 
 }
