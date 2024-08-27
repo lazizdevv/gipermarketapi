@@ -15,7 +15,7 @@ server.use(middlewares);
 server.use(router);
 
 // Portni tekshirib, kerakli portda ishlash
-const port = process.env.PORT || 4173; // Default port: 4173
+const port = process.env.PORT || 3000; // Default port: 3000
 server.listen(port, () => {
   console.log(`JSON Server is running on port ${port}`);
 });
