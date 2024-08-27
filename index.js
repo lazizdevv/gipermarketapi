@@ -7,15 +7,12 @@ const middlewares = jsonServer.defaults();
 // CORS sozlamalarini kengaytiring
 server.use(cors({
   origin: '*', // Hamma domenlardan so'rovlarni qabul qilish
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: 'Content-Type, Authorization'
 }));
 
 server.use(middlewares);
 server.use(router);
-
-// Portni tekshirib, kerakli portda ishlash
-const port = process.env.PORT || 3000; // Default port: 3000
-server.listen(port, () => {
-  console.log(`JSON Server is running on port ${port}`);
+server.listen(process.env.PORT || 3000, () => {
+  console.log('JSON Server is running');
 });
