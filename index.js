@@ -4,10 +4,15 @@ const server = jsonServer.create();
 const router = jsonServer.router('db.json');
 const middlewares = jsonServer.defaults();
 
-server.use(cors());
+// CORS sozlamalarini kengaytiring
+server.use(cors({
+  origin: '*', // Hamma domenlardan so'rovlarni qabul qilish
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type, Authorization'
+}));
 
 server.use(middlewares);
 server.use(router);
-server.listen(process.env.PORT || 3000 || 4173, () => {
+server.listen(process.env.PORT || 3000, () => {
   console.log('JSON Server is running');
 });
